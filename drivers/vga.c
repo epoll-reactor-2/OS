@@ -145,11 +145,12 @@ void vga_put_string(const char *mem)
 		vga_put_char(*mem++);
 }
 
-void vga_init()
+void vga_clear()
 {
 	s32 screen_size = VGA_W * VGA_H;
 	s32 i;
 	u8 *video_memory = (u8 *) VGA_PHYS_VIDEO_ADDR;
+
 
 	for (i = 0; i < screen_size; i++) {
 		video_memory[i * 2] = ' ';
@@ -157,4 +158,10 @@ void vga_init()
 	}
 
 	vga_set_cursor_off(vga_off(0, 0));
+}
+
+void vga_init()
+{
+	/* This code clears bootloader messages. Maybe left as is. */
+	/* vga_clear(); */
 }

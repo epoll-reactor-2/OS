@@ -4,6 +4,7 @@
 #include "cpu/type.h"
 
 void vga_init();
+void vga_clear();
 void vga_put_byte(char c);
 void vga_put_string(const char *mem);
 

@@ -150,7 +150,8 @@ void mouse_install()
 {
 	/* NOTE: For totally unknown for me reason HDMI port and
 	         my USB mouse are interconnected somehow. This mouse
-	         handler works iff HDMI is plugged out from laptop. */
+	         handler works iff HDMI is plugged out from laptop.
+	         Also, mouse works touchpad not. */
 	mouse_wait(1);
 	port_byte_out(MOUSE_STATUS, 0xA8);
 	mouse_wait(1);
@@ -168,3 +169,5 @@ void mouse_install()
 
 	irq_install_handler(IRQ12, irq_mouse);
 }
+
+/* Я слишком пьян, чтоб соображать хоть что-то. */

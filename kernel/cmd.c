@@ -19,7 +19,7 @@ void cmd_ata_reset()
 
 void cmd_clear()
 {
-	vga_init();
+	vga_clear();
 }
 
 void cmd_help()
